@@ -9569,14 +9569,22 @@
         "ListDatasetEntries",
         "ListModels",
         "ListProjects",
+        "ListTagsForResource",
         "ListTrialDetections",
         "StartModel",
         "StartTrialDetection",
         "StopModel",
+        "TagResource",
+        "UntagResource",
         "UpdateDatasetEntries"
       ],
       "HasResource": true,
-      "StringPrefix": "lookoutvision"
+      "StringPrefix": "lookoutvision",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "Amazon MQ": {
       "ARNFormat": "arn:${Partition}:mq:<region>:<account>:.+",
